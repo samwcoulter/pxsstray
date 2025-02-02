@@ -1,9 +1,12 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = [
+    "setuptools>=61.0",
+    "setuptools-scm>=8.0"
+]
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "pxsstray_scoulter"
+name = "pxsstray"
 version = "0.0.1"
 authors = [
   { name="Sam Coulter", email="sam.w.coulter@gmail.com" },
@@ -21,17 +24,12 @@ classifiers = [
     "Topic :: Desktop Environment :: Screen Savers",
     "Topic :: Utilities"
 ]
-license = "MIT"
-license-files = ["LICEN[CS]E*"]
+#license = "MIT"
+#license-files = ["LICENSE.txt"]
 
 [project.urls]
 Homepage = "https://github.com/pypa/sampleproject"
 Issues = "https://github.com/pypa/sampleproject/issues"
 
 [project.gui-scripts]
-pxsstray = "pxsstray_scoulter:main.run"
-
-[tool.hatch.build.targers.sdist]
-include = [
-    "images/*"
-]
+pxsstray = "pxsstray:main.run"
