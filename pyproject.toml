@@ -31,5 +31,5 @@ classifiers = [
 Homepage = "https://github.com/pypa/sampleproject"
 Issues = "https://github.com/pypa/sampleproject/issues"
 
-[project.gui-scripts]
-pxsstray = "pxsstray:main.run"
+[project.scripts]
+pxsstray = "pxsstray.main:run"
