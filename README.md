@@ -1,5 +1,10 @@
-# Example Package
+# pxsstray : Python XSet S Tray 
 
-This is a simple example package. You can use
-[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
-to write your content.
+
+## Testing
+
+Run unit tests with
+
+```
+python -m unittest
+```
