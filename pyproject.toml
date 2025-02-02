@@ -24,8 +24,8 @@ classifiers = [
     "Topic :: Desktop Environment :: Screen Savers",
     "Topic :: Utilities"
 ]
-#license = "MIT"
-#license-files = ["LICENSE.txt"]
+# license = "MIT"
+# license-files = ["LICEN[CS]E*"]
 
 [project.urls]
 Homepage = "https://github.com/pypa/sampleproject"

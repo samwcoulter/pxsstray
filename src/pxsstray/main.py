@@ -2,35 +2,43 @@
 # SPDX-License-Identifier: LicenseRef-Qt-Commercial OR BSD-3-Clause
 from __future__ import annotations
 import sys
-import importlib_resources
-from PySide6.QtGui import QIcon, QAction
-from PySide6.QtWidgets import QApplication, QSystemTrayIcon, QMenu, QMessageBox
+from importlib.resources import files
+from PySide6 import QtGui, QtWidgets as QW
+
+from . import xset
+
+
+def query():
+    text = xset.xset_q()
+    return text
 
 
 def run():
-    app = QApplication()
+    app = QW.QApplication()
 
-    if not QSystemTrayIcon.isSystemTrayAvailable():
-        QMessageBox.critical(
+    if not QW.QSystemTrayIcon.isSystemTrayAvailable():
+        QW.QMessageBox.critical(
             None, "Systray", "I couldn't detect any system tray on this system."
         )
         sys.exit(1)
 
-    resources = importlib_resources.files("pxsstray_scoulter") / "images"
+    QW.QApplication.setQuitOnLastWindowClosed(False)
 
-    QApplication.setQuitOnLastWindowClosed(False)
+    iconPath = str(files("pxsstray.images").joinpath("heart.png"))
+    icon = QtGui.QIcon(iconPath)
 
-    icon = QIcon(resources / "images/heart.png")
-
-    tray = QSystemTrayIcon()
+    tray = QW.QSystemTrayIcon()
     tray.setIcon(icon)
     tray.setVisible(True)
 
-    menu = QMenu()
-    action = QAction("Menu Action WXST")
+    menu = QW.QMenu()
+
+    label = menu.addSection(xset.xset_q())
+
+    action = QtGui.QAction("Menu Action WXST")
     menu.addAction(action)
 
-    quit = QAction("Quit")
+    quit = QtGui.QAction("Quit")
     quit.triggered.connect(app.quit)
     menu.addAction(quit)
 
