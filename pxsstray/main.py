@@ -24,6 +24,6 @@ def run():
 
     QtWidgets.QApplication.setQuitOnLastWindowClosed(False)
 
-    tray = trayMenu.TrayMenu(app)
+    _ = trayMenu.TrayMenu(app)
 
     sys.exit(app.exec())

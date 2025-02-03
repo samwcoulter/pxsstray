@@ -24,3 +24,11 @@ class XSettings:
 def xset_q():
     settingsText = run.run(["xset", "q"])
     return settingsText
+
+
+def xset_dpms(enable: bool) -> None:
+    run.run(["xset", "+dpms" if enable is True else "-dpms"])
+
+
+def xset_s(enable: bool) -> None:
+    run.run(["xset", "s", "on" if enable is True else "off"])
