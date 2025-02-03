@@ -12,6 +12,9 @@ class DPMSSettings:
         cmd = ["xset", "dpms", self.standby, self.suspend, self.off]
         return run.run(cmd)
 
+    def Parse(xset_output: str):
+        return DPMSSettings()
+
 
 class XSettings:
     def __init__(self, dpms):
