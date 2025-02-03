@@ -6,18 +6,17 @@ class TrayMenu(QtWidgets.QSystemTrayIcon):
     def __init__(self, app):
         super().__init__()
         iconPath = str(files("pxsstray.images").joinpath("heart.png"))
-        icon = QtGui.QIcon(iconPath)
-
-        self.setIcon(icon)
+        self.icon = QtGui.QIcon(iconPath)
+        self.setIcon(self.icon)
         self.setVisible(True)
 
-        menu = QtWidgets.QMenu()
+        self.menu = QtWidgets.QMenu()
 
-        action = QtGui.QAction("Menu Action WXST")
-        menu.addAction(action)
+        self.action = QtGui.QAction("Menu Action WXST")
+        self.menu.addAction(self.action)
 
-        quit = QtGui.QAction("Quit")
-        quit.triggered.connect(app.quit)
-        menu.addAction(quit)
+        self.quit = QtGui.QAction("Quit")
+        self.quit.triggered.connect(app.quit)
+        self.menu.addAction(self.quit)
 
-        self.setContextMenu(menu)
+        self.setContextMenu(self.menu)
