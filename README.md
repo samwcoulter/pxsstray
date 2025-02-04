@@ -5,7 +5,7 @@ This is a small utility that provides a `pxsstray` script command which creates 
 ## Installation
 
 ```
-pip install -u pxsstray
+pip install --upgrade pxsstray
 ```
 
 ### pyenv
