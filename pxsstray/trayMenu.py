@@ -8,7 +8,7 @@ import time
 class TrayMenu(QtWidgets.QSystemTrayIcon):
     def __init__(self, app):
         super().__init__()
-        iconPath = str(files("pxsstray.images").joinpath("heart.png"))
+        iconPath = str(files("pxsstray.images").joinpath("cross.png"))
         self.icon = QtGui.QIcon(iconPath)
         self.setIcon(self.icon)
         self.setVisible(True)
