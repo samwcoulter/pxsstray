@@ -2,6 +2,8 @@
 
 This is a small utility that provides a `pxsstray` script command which creates a tray icon with right click context menu you can use to enable or disable the X display screensaver or DPMS.
 
+![Screenshot of the tray context menu](doc/screenshot.png "Tray Context Menu")
+
 ## Installation
 
 ```
