@@ -4,13 +4,7 @@ from __future__ import annotations
 import sys
 from PySide6 import QtGui, QtWidgets
 
-from . import xset
-from . import trayMenu
-
-
-def query():
-    text = xset.xset_q()
-    return text
+from pxsstray import trayMenu
 
 
 def run():
@@ -27,3 +21,7 @@ def run():
     _ = trayMenu.TrayMenu(app)
 
     sys.exit(app.exec())
+
+
+if __name__ == "__main__":
+    run()

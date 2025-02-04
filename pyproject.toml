@@ -15,6 +15,7 @@ description = "A small example package"
 readme = "README.md"
 dependencies = [
   "pyside6",
+  "python-xlib",
 ]
 requires-python = ">=3.12"
 classifiers = [
